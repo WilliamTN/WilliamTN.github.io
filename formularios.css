@@ -1,0 +1,341 @@
+@charset "utf-8";
+body, html{
+	height:100%;
+}
+body #contenedor form{
+	margin:0;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	line-height: 18px;
+	color: #333;
+}
+#contenedor {
+	width: 880px;
+	background-color:#FFF;
+	margin:0 auto 0 auto;
+	overflow:auto;
+}
+form #cabecera{
+	height:50px;
+	overflow:hidden;
+	margin:0 0 10px 0;
+	padding:0;
+}
+#cabecera_marca{
+	margin:0;
+	padding:0;
+	text-align:right;
+	float:right;
+}
+#cabecera_marca a{
+	color:#999999;
+	text-decoration:none;
+}
+#cabecera_marca a:hover{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+#eslogan_cype{
+	margin:9px 0 0 0;
+	padding:0;
+	text-align:right;
+	float:right;
+	line-height:15px;
+}
+#eslogan_cype a{
+	font-size:12px;
+	color:#999999;
+	text-decoration:none;
+}
+#eslogan_cype a:hover{
+	color:#999999;
+	text-decoration:underline;
+}
+#titular_texto{
+	margin:0;
+	color:#3670BE;
+	font-size:24px;
+	line-height: 24px;
+	font-weight:bold;
+	margin-top: 10px;
+}
+.datosCte input, .datosCte textarea, .datosCte select{
+	border:solid 1px #326496;
+	width:100%;
+}
+.datosCte td{
+	height:30px;
+}
+#cajaTabs{
+	margin:0px 0;
+}
+
+ul#listaCalendarios{ 
+	width: 100%;
+	height: 43px;
+	font-weight: bold; 
+	list-style-type: none; 
+	margin: 0; 
+	padding: 0;
+	overflow:hidden;	
+}
+/*.cur_bim {
+	background: #FFF url(http://www.cype.fr/temas/2011/images/fondo_tabcontrol_bim.png) top left repeat-x; 
+}*/
+
+.cur_structures{
+	background: #FFF url(http://www.cype.fr/temas/2011/images/fondo_tabcontrol_estructuras.png) top left repeat-x; 
+}
+.cur_fluides{
+	background: #FFF url(http://www.cype.fr/temas/2011/images/fondo_tabcontrol_instalaciones.png) top left repeat-x; 
+}
+.cur_gestion{
+	background: #FFF url(http://www.cype.fr/temas/2011/images/fondo_tabcontrol_gestion.png) top left repeat-x; 
+}
+ul#listaCalendarios li {
+	display: block; 
+	float: left; 
+	margin: 0 5px 0 5px;
+	font-size:13px;
+	height: 43px; 
+	color: #777; 
+	text-decoration: none; 
+	line-height: 200%; 
+	padding: 8px 15px 0; 
+	}
+ul#listaCalendarios li a:hover { 
+	color:inherit;
+}
+ul#listaCalendarios li a { 
+	color:inherit; 
+	text-decoration:none;
+	}
+#contenido_central ul li{
+	margin-bottom:0;
+}
+.noSelec a, .siSelec a{
+	color:#3A76AC;
+	text-decoration:none;
+}
+.noSelec a:hover, .siSelec a:hover{
+	color:#990000;
+	text-decoration:none;
+}
+.siSelec{
+	width:230px;
+	background-image:url("http://encuentros.cype.es/imagen/fondo_tab_on.png");
+	background-position:bottom;
+	background-repeat:no-repeat;
+}
+ul#listaCalendarios #tab_bim.current { 
+	color: #FFF;
+	padding: 5px 15px 0; 
+	/* background: url(http://www.cype.fr/temas/2011/images/fondo_current_bim.png) top left repeat-x;  */
+	/* background-color: #9b9b9b;*/
+	background-color: #6786a5;
+}
+ul#listaCalendarios #tab_architecture.current { 
+	color: #FFF;
+	padding: 5px 15px 0; 
+	/* background: url(http://www.cype.fr/temas/2011/images/fondo_current_bim.png) top left repeat-x;  */
+	/* background-color: #B56D21; */
+	background-color: #404958;
+}
+ul#listaCalendarios #tab_structures.current{ 
+	color: #FFF; 
+	padding: 5px 15px 0; 
+	/* background: url(http://www.cype.fr/temas/2011/images/fondo_current_estructuras.png) top left repeat-x; */
+	background-color: #d94344; 
+}
+ul#listaCalendarios #tab_energetique.current{
+	color: #FFF;
+	padding: 5px 15px 0;
+	background-color: #f1944f;
+}
+ul#listaCalendarios #tab_environnement.current{
+	color: #FFF;
+	padding: 5px 15px 0;
+	background-color: #6db859;
+}
+ul#listaCalendarios #tab_acoustique.current{ 
+	color: #FFF; 
+	padding: 5px 15px 0; 
+	/* background: url(http://www.cype.fr/temas/2011/images/fondo_current_acoustique.png) top left repeat-x; */
+	background-color: #827ebb;
+}
+ul#listaCalendarios #tab_fluides.current{ 
+	color: #FFF; 
+	padding: 5px 15px 0; 
+	/* background: url(http://www.cype.fr/temas/2011/images/fondo_current_instalaciones.png) top left repeat-x; */
+	background-color: #48abd4;
+}
+ul#listaCalendarios #tab_gestion.current{ 
+	color: #FFF; 
+	padding: 5px 15px 0; 
+	/* background: url(http://www.cype.fr/temas/2011/images/fondo_current_gestion.png) top left repeat-x; */
+	background-color: #3e9874; 
+}
+
+.tabla_productos{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	background-color:#E6EDF3;
+	border-collapse:collapse;
+	border-right:solid 1px #457194;
+	clear:both;
+}
+
+.tabla_productos td, .tabla_productos th{
+	height:1.25em;
+	padding:0.35em;
+}
+.tabla_productos td.txtModulo{
+	padding-left:2em;
+}
+
+#tabla_bim{
+	display:block;
+}
+#tabla_architecture{
+	display:block;
+}
+#tabla_structures{
+	display:none;
+}
+#tabla_fluides{
+	display:none;
+}
+#tabla_gestion{
+	display:none;
+}
+.txtBlanco{
+	color:#FFF;
+}
+#pie{
+	width: 840px;
+	clear:both;
+	background-color:#f5f5f5;
+	margin:0 auto 0 auto;
+	padding:20px 20px;
+	color: #757575;
+	font-size:12px;
+  	border: solid #326496 1px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+}
+#pie a{
+	color:#757575;
+	text-decoration:none;
+}
+#pie a:hover{
+	color:#262626;
+	text-decoration:underline;
+}
+#secciones_mapa{
+	width: 840px;
+	margin:0 auto 0 auto;
+	padding:14px 20px 0 20px;
+	font-size:12px;
+	text-align:center;
+	z-index:4;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+}
+#mapa_linea1{
+	width:860px;
+}
+#mapa_linea2{
+	width:860px;
+}
+#secciones_mapa ul{
+	clear:both;
+	text-align:center;
+	display:block;
+	margin:0 auto;
+	padding:0;
+	margin-bottom:5px;
+	list-style:none;
+}
+#secciones_mapa li{
+	float:left;
+	margin-bottom:5px;
+}
+#secciones_mapa li span{
+	margin: 0 8px 0 8px;
+	color:#999999;
+}
+#secciones_mapa a{
+	color:#828085;
+	text-decoration:none;
+}
+#secciones_mapa a:hover{
+	color:#828085;
+	text-decoration:underline;
+}
+#pie_logos{
+	width: 880px;
+	margin:0 auto 0 auto;
+	text-align:right;
+}
+.importe{
+	text-align:right;
+	width:50px;
+	border:none;
+	background-color:transparent;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+}
+.importe-seleccionado{
+	background-color:#FFFF66;
+}
+#tot_pedido{
+	text-align:right;
+	width:70px;
+	border:none;
+	background-color:transparent;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	font-weight:bold;
+	height:16px;
+}
+#cod_promocion{
+	width:90px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+}
+#cajaDetalles{
+	clear:both;
+	margin: 5px 0;
+	display:block;
+}
+#tablaDetalles{
+	border:solid 1px #326496;
+	border-collapse:collapse;
+	margin-bottom:10px;
+}
+#tablaDetalles td{
+	border:solid 1px #326496;
+	padding:0 3px;
+}
+#ver_detalles{
+	width:145px;
+	font-weight:bold;
+	color:#3670BE;
+}
+#aplica_promocion{
+	width:75px;
+}
+.lee_condiciones a{
+	color:#3670BE;
+	text-decoration:none;
+}
+.lee_condiciones a:hover{
+	color:#990D02;
+}
+.rojo{
+	color:#900;
+}
+.otras_licencias{
+	text-align:right;
+	color:#006;
+}

@@ -1,0 +1,357 @@
+/*P R O D U C T O S */
+#tbProductos{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	background-color:#E6EDF3;
+	border-collapse:collapse;
+	border-right:solid 1px #457194;
+}
+
+#tbProductos td, #tbProductos th{
+	height:1.25em;
+	padding:0.35em;
+}
+#tbProductos td.txtModulo{
+	padding-left:2em;
+}
+.anchoCol{
+	padding-left:20px;
+}
+.fndProducto{
+	background-color:#000;
+}
+.fndProducto h2, .fndPrograma h2{
+	margin:0;
+	padding:0;
+}
+.fndProducto h2 a, .fndPrograma h2 a{
+	color:#FFFFFF;
+	font-size: 12px;
+	text-decoration:none;
+}
+/* INICIO BIM */
+/* <--- SUPERGRUPO ---> */
+.fndSuperGrupo_bim {
+	background-color:#9b9b9b;
+}
+.fndSuperGrupo_bim h2 {
+	margin:0;
+	padding:0;
+}
+.fndSuperGrupo_bim h2 a {
+	color: #FFFFFF;
+	font-size: 12px;
+	text-decoration:none;
+}
+
+/* <--- GRUPO --->*/
+.fndGrupo_bim {
+	background-color:#bbbbbb;
+}
+.fndGrupo_bim h2 {
+	margin:0;
+	padding:0;
+}
+.fndGrupo_bim h2 a {
+	color: #FFFFFF;
+	font-size: 12px;
+	text-decoration:none;
+}
+
+/* <--- PROGRAMA, MÓDULO --> */
+.fndPrograma_bim {
+	background-color:#dddddd;
+}
+.fndModulo_bim {
+	background-color:#eeeeee;
+}
+.fndPrograma_bim h2 a:hover {
+	color: #FF0;
+	text-decoration: underline;
+}
+.fndGrupo_bim h2 a:hover {
+	color: #FF0;
+	text-decoration: underline;
+}
+.fndPrograma_bim h2 {
+	margin:0;
+	padding:0;
+}
+.fndPrograma_bim h2 a {
+	color: #FFFFFF;
+	font-size: 12px;
+	text-decoration:none;
+}
+
+#tab_bim.current a:hover {
+	color: black;
+}
+/* FINAL BIM */
+
+/* INICIO A R C H I T E C T U R E  */
+/* ---> S U P E R G R U P O  */
+.fndSuperGrupo_architecture{
+	background-color:#B56D21;
+}
+.fndSuperGrupo_architecture h2, .fndSuperGrupo_architecture h2{
+	margin:0;
+	padding:0;
+}
+.fndSuperGrupo_architecture h2 a, .fndSuperGrupo_architecture h2 a{
+	color:#FFFFFF;
+	font-size: 12px;
+	text-decoration:none;
+}
+/* ---> G R U P O  */
+.fndGrupo_architecture{
+	background-color:#E88C2A;
+}
+.fndGrupo_architecture h2, .fndGrupo_architecture h2{
+	margin:0;
+	padding:0;
+}
+.fndGrupo_architecture h2 a, .fndGrupo_architecture h2 a{
+	color:#FFFFFF;
+	font-size: 12px;
+	text-decoration:none;
+}
+
+.fndPrograma_architecture{
+	background-color:#ECB171;
+}
+.fndModulo_architecture{
+	background-color:#FFE4C7;
+}
+.fndModulo_architecture a:hover, .fndPrograma_architecture h2 a:hover, .fndPrograma_fluides h2 a:hover, .fndPrograma_gestion h2 a:hover{
+	color: #FF0;
+	text-decoration: underline;
+}
+.fndGrupo_architecture h2 a:hover, .fndGrupo_fluides h2 a:hover, .fndGrupo_gestion h2 a:hover{
+	color: #FF0;
+	text-decoration: underline;
+}
+.fndPrograma_architecture h2, .fndPrograma_fluides h2, .fndPrograma_gestion h2, .fndPrograma_acoustique h2{
+	margin:0;
+	padding:0;
+}
+.fndPrograma_architecture h2 a, .fndPrograma_fluides h2 a, .fndPrograma_gestion h2 a, .fndPrograma_acoustique h2 a{
+	color:#FFFFFF;
+	font-size: 12px;
+	text-decoration:none;
+}
+/* FINAL A R C H I T E C T U R E  */
+
+/* INICIO S T R U C T U R E S  */
+/* ---> S U P E R G R U P O  */
+.fndSuperGrupo_structures{
+	background-color:#990D02;
+}
+.fndSuperGrupo_structures h2, .fndSuperGrupo_structures h2{
+	margin:0;
+	padding:0;
+}
+.fndSuperGrupo_structures h2 a, .fndSuperGrupo_structures h2 a{
+	color:#FFFFFF;
+	font-size: 12px;
+	text-decoration:none;
+}
+/* ---> G R U P O  */
+.fndGrupo_structures{
+	background-color:#B8311A;
+}
+.fndGrupo_structures h2, .fndGrupo_structures h2{
+	margin:0;
+	padding:0;
+}
+.fndGrupo_structures h2 a, .fndGrupo_structures h2 a{
+	color:#FFFFFF;
+	font-size: 12px;
+	text-decoration:none;
+}
+
+.fndPrograma_structures{
+	background-color:#F86949;
+}
+.fndModulo_structures{
+	background-color:#FFD3AA;
+}
+.fndModulo_structures a:hover, .fndPrograma_structures h2 a:hover, .fndPrograma_fluides h2 a:hover, .fndPrograma_gestion h2 a:hover{
+	color: #FF0;
+	text-decoration: underline;
+}
+.fndGrupo_structures h2 a:hover, .fndGrupo_fluides h2 a:hover, .fndGrupo_gestion h2 a:hover{
+	color: #FF0;
+	text-decoration: underline;
+}
+.fndPrograma_structures h2, .fndPrograma_fluides h2, .fndPrograma_gestion h2, .fndPrograma_acoustique h2{
+	margin:0;
+	padding:0;
+}
+.fndPrograma_structures h2 a, .fndPrograma_fluides h2 a, .fndPrograma_gestion h2 a, .fndPrograma_acoustique h2 a{
+	color:#FFFFFF;
+	font-size: 12px;
+	text-decoration:none;
+}
+/* FINAL S T R U C T U R E S  */
+
+/* INICIO F L U I D E S */
+/* ---> S U P E R G R U P O  */
+.fndSuperGrupo_fluides{
+	background-color:#004059;
+}
+.fndSuperGrupo_fluides h2, .fndSuperGrupo_fluides h2{
+	margin:0;
+	padding:0;
+}
+.fndSuperGrupo_fluides h2 a, .fndSuperGrupo_fluides h2 a{
+	color:#FFFFFF;
+	font-size: 12px;
+	text-decoration:none;
+}
+.fndGrupo_fluides{
+	background-color:#40708B;
+}
+.fndGrupo_fluides h2, .fndGrupo_fluides h2{
+	margin:0;
+	padding:0;
+}
+.fndGrupo_fluides h2 a, .fndGrupo_fluides h2 a{
+	color:#FFFFFF;
+	font-size: 12px;
+	text-decoration:none;
+}
+.fndPrograma_fluides{
+	background-color:#75A4C1;
+}
+.fndModulo_fluides{
+	background-color:#D6FFFF;
+}
+/* FINAL F L U I D E S  */
+
+/* INICIO A C O S U T I Q U E */
+/* ---> S U P E R G R U P O  */
+.fndSuperGrupo_acoustique{
+	background-color:rgb(111,22,122);
+}
+.fndSuperGrupo_acoustique h2, .fndSuperGrupo_acoustique h2{
+	margin:0;
+	padding:0;
+}
+.fndSuperGrupo_acoustique h2 a, .fndSuperGrupo_acoustique h2 a{
+	color:#FFFFFF;
+	font-size: 12px;
+	text-decoration:none;
+}
+.fndGrupo_acoustique{
+	background-color:rgb(153,102,153);
+}
+.fndGrupo_acoustique h2, .fndGrupo_acoustique h2{
+	margin:0;
+	padding:0;
+}
+.fndGrupo_acoustique h2 a, .fndGrupo_acoustique h2 a{
+	color:#FFFFFF;
+	font-size: 12px;
+	text-decoration:none;
+}
+.fndPrograma_acoustique{
+	background-color:rgb(204,153,204);
+}
+.fndModulo_acoustique{
+	background-color:rgb(250,220,220);
+}
+/* FINAL F L U I D E S  */
+
+/* INICIO G E S T I O N */
+/* ---> S U P E R G R U P O  */
+.fndSuperGrupo_gestion{
+	background-color:#0E4302;
+}
+.fndSuperGrupo_gestion h2, .fndSuperGrupo_gestion h2{
+	margin:0;
+	padding:0;
+}
+.fndSuperGrupo_gestion h2 a, .fndSuperGrupo_gestion h2 a{
+	color:#FFFFFF;
+	font-size: 12px;
+	text-decoration:none;
+}
+.fndGrupo_gestion{
+	background-color:#457332;
+}
+.fndGrupo_gestion h2, .fndGrupo_gestion h2{
+	margin:0;
+	padding:0;
+}
+.fndGrupo_gestion h2 a, .fndGrupo_gestion h2 a{
+	color:#FFFFFF;
+	font-size: 12px;
+	text-decoration:none;
+}
+.fndPrograma_gestion{
+	background-color:#78A862;
+}
+.fndModulo_gestion{
+	background-color:#DBFFC1;
+}
+.fndBlanco{
+	background-color:#FFFFFF;
+}
+.brdSup{
+	border-top:solid 1px #FFFFFF;
+}
+.brdDch{
+	border-right:solid 1px #FFFFFF;
+}
+.brdInf{
+	border-bottom:solid 1px #FFFFFF;
+}
+.brdIzq{
+	border-left:solid 1px #FFFFFF;
+}
+.alnDch{
+	text-align:right;
+}
+.alnCen{
+	text-align:center;
+}
+.txtPrograma a, .txtModulo a{
+	color: #000000;
+	text-decoration: none;
+}
+.txtPrograma a:hover, .txtModulo a:hover, .fndProducto h2 a:hover, .fndPrograma h2 a:hover {
+	color: #3670C5;
+	text-decoration: underline;
+}
+.subGrupoProgramas {
+	display: block;
+	background-color: #84AFD1;
+	margin-left: 20px;
+	border: 1px;
+}
+.modulo {
+	color: #993333;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+}
+.moduloA{
+	background-color:#457194;
+	color:#FFFFFF;
+	width:20px;
+	height:20px;
+	padding:0 4px;
+}
+.moduloB{
+	background-color:#84AFD1;
+	color:#FFFFFF;
+	width:20px;
+	height:20px;
+	padding:0 4px;
+}
+.tachado {
+	font-family: Arial, "Times New Roman", Times, serif;
+	font-size: 12px;
+	color: #990000;
+	text-decoration: line-through;
+}

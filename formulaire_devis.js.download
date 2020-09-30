@@ -1,0 +1,313 @@
+var precio_internet = 0.0, precio_real = 0.0;
+//COMPRUEBA SI ES UNA DIRECCION DE CORREO ELECTRÓNICO CORRECTA
+function validaEmail(elEmail){
+	/*Con expresiones regulares
+	NOTA: No se contemplan extensiones de dominio de más de 4 caracteres (.museum, .store) son mut poco frecuentes
+	      No se contemplan las direcciones de correo con formato IP
+	1.- \w+							---> que tenga al menos una palabra
+	2.- ((-\w+)|(\.\w+)|(\_\w+))*	---> que tenga cero o más palabras precedidas de un (.), un (-) o un (_)
+	3.- \@							---> una y sólo una @
+	4.- [A-Za-z0-9]					---> sólo caracteres normales y números
+	5.- ((.|-)[A-Za-z0-9]+)*		---> solo caracteres normales y números precedidos de un (.) o un (-)
+	6.- \.							---> el último punto
+	7.- [A-Za-z]{2,4}				---> de 2 a 4 caracteres después del punto. (4 por .info, .name)
+	*/
+	//	return (elEmail.search( /\w+((-\w+)|(\.\w+)|(\_\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z]{2,4}/ ) != -1);
+	// ¿Soporta expresiones regulares?
+	var soporta = false;
+	if (window.RegExp) {
+		var aux = "a";
+		var auxReg = new RegExp(aux);
+		if (auxReg.test(aux)) soporta = true;
+	}
+	if (!soporta) return (elEmail.indexOf(".") > 2) && (elEmail.indexOf("@") > 0);
+	var exp1 = new RegExp("(@.*@)|(\\.\\.)|(@\\.)|(\\.@)|(^\\.)");
+	var exp2 = new RegExp("^.+\\@(\\[?)[a-zA-Z0-9\\-\\.]+\\.([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)$");
+	return (!exp1.test(elEmail) && exp2.test(elEmail));
+}
+
+//COMPRUEBA QUE NO SE TECLEAN ESPACIOS, GUIONES, ETC
+function quitaEspacios(cad){
+	var malos = new String(' -.:_,');
+	var nueva_cad = '';
+	for (i=0;i<cad.length;i++){
+		s=cad.substring(i, i+1);
+		if (malos.indexOf(s)==-1) nueva_cad = nueva_cad + s;
+	}
+	return nueva_cad;
+}
+
+function sinEspacios(campo){
+	var correcta = quitaEspacios(campo.value);
+	if (correcta != campo.value){
+		alert('Veuillez remplir ce champ sans introduire d\'espace, de point, de trait d\'union, etc');
+		campo.value = correcta;
+		campo.focus();
+		campo.select();
+		return false;
+	}else
+		return true;
+}
+
+//CAMBIA EL NOMBRE DEL CAMPO PARA EL MENSAJE DE ERRORES
+function nombreCampo(nomcam){
+	switch (nomcam){
+	   	case 'Nombre': 
+			return 'Le nom ou la raison sociale';
+			break;
+	   	case 'Apellidos': 
+			return 'Le prénom ou la personne de contact';
+			break;
+	   	case 'NumCliente': 
+			return 'Le nº Licence';
+			break;
+	   	case 'Direccion': 
+			return 'L\'adresse';
+			break;
+	   	case 'profesion':
+			return 'La profession';
+			break;
+	   	case 'Poblacion':
+			return 'La ville';
+			break;
+	   	case 'CodigoPostal':
+			return 'Le Code Postal';
+			break;
+	   	case 'TelNumero':
+			return 'Le nº de téléphone';
+			break;
+	   	case 'FaxNumero':
+			return 'Le nº de fax';
+			break;
+	   	case 'NIF':
+			return 'Nº T.V.A.';
+			break;
+	   	case 'CorreoElectronico':
+			return 'Le courrier électronique';
+			break;
+	   	case 'fecha_entrega':
+			return 'La date souhaitée de livraison';
+			break;
+	   	default: return nomcam;
+	}
+}
+
+//CONVIERTE UNA CADENA EN UN OBJETO x EL NOMBRE
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+//COMPRUEBA SI LO CAMPOS CUMPLIMENTADOS SON CORRECTOS
+function validaPedido(){
+	var i,p,q,nm,test,num,min,max,errors='',args=validaPedido.arguments;
+	for (i=0; i<(args.length-2); i+=3){
+		test=args[i+2];
+		val=MM_findObj(args[i]);
+		if (val){ 
+			nm=nombreCampo(val.name);
+			if ((val=val.value)!=""){
+				if (test.indexOf('isEmail')!=-1){
+					p=validaEmail(val);
+					if (!p) errors+='- '+nm+' l\'adresse électronique indiquée n\'est pas valide.\n';
+				}else if (test!='R'){
+					if (isNaN(val)) errors+='- '+nm+' doit être un nombre.\n';
+					if (test.indexOf('inRange') != -1) {
+						p=test.indexOf(':');
+						min=test.substring(8,p);
+						max=test.substring(p+1);
+						if (val<min || max<val) errors+='- '+nm+' doit être un nombre compris entre '+min+' et '+max+'.\n';
+					}
+				}
+			}else if (test.charAt(0) == 'R') errors += '- '+nm+' est obligatoire.\n';
+		}
+ 	}
+	if (errors) alert('Les erreurs suivantes se sont produites:\n'+errors);
+
+	document.MM_returnValue = (errors == '');
+}
+
+if (document.images){
+  var obligado=new Image();
+  obligado.src="http://www.cype.es/principal/imagen/formularios/obligacionP.gif";
+  var NOobligado=new Image();
+  NOobligado.src="http://www.cype.es/principal/transparent.gif";
+}
+
+//PONER MARCA DE CAMPO OBLIGATORIO
+function ponerObli(nombreImg,campo){
+  if (document.images){
+	objto=MM_findObj(campo);
+    document[nombreImg].src=obligado.src;
+	objto.disabled=0;
+
+	var tb = document.getElementById('tbNOCliente');
+	if (campo == 'NumCliente' && tb){
+		tb.style.display = "block";
+		var nc = document.getElementById('NumCliente');
+		nc.focus();
+	}
+  }
+}
+//QUITAR MARCA DE CAMPO OBLIGATORIO
+function quitarObli(nombreImg,campo){
+  if (document.images){
+	objto=MM_findObj(campo);
+    document[nombreImg].src=NOobligado.src;
+	objto.value="";
+	objto.disabled=1;
+	var tb = document.getElementById('tbNOCliente');
+	if (campo == 'NumCliente' && tb) tb.style.display = "none";
+
+	tb = document.getElementById('tbPredimensionadores');
+	if (campo == 'NumCliente' && tb) tb.style.display = "none";
+
+	tb = document.getElementById('ofertaGenPres');
+	if (campo == 'NumCliente' && tb){
+		var cm = document.getElementById('mejoras0');
+		if (cm){
+			if (cm.checked){
+				cm.checked = false;
+				document.getElementById('mejoras1').checked=true;
+				document.getElementById("lineaMejoras").style.display = "none";
+			}
+		}
+		var contenido = "";
+		tb.innerHTML = contenido;
+		var genPres = document.getElementById("sumPredimensionadores");
+		if (genPres) {
+			for (i=1;i<=6;i++){
+				chA = document.getElementById("chA"+i);
+				chA.checked = false;
+			}
+			genPres.value="0,00";
+			document.getElementById("dtoPredimensionadores").value="0,00";
+			sumaP0();
+		}
+	}
+	tb = document.getElementById('predA1');
+	var capaPred;
+	if (campo == 'NumCliente' && tb){
+		for (i=1;i<7;i++){
+			capaPred = document.getElementById('chA'+i);
+			capaPred.checked = false;
+			capaPred = document.getElementById('predA'+i);
+			capaPred.style.display = "none";
+		}
+		sumaP02();
+	}
+  }
+}
+
+//PONER o QUITAR MARCA DE CAMPO OBLIGATORIO EN NUM TVA
+function ponObliTVA(){
+  var paises = document.getElementById('Pais');
+  var esFrancia = paises.options[paises.selectedIndex].text;
+
+  if (document.images){
+	if (esFrancia == "France"){
+	    document["obliTVA"].src=obligado.src;
+	}else{
+	    document["obliTVA"].src=NOobligado.src;
+	}
+  }
+}
+
+//SI SE ELIJE COMO PROFESION "OTRA" SE HACE CAMPO OBLIGATORIO
+function esOtra(campo){
+  if (campo.value == "Otra"){
+      ponerObli('obliotra','Otra');
+  } else if (campo.value == "#"){
+  	        document.Pedido.Profesion.value="Otra";
+      		ponerObli('obliotra','Otra');
+	     } else {
+            quitarObli('obliotra','Otra');
+         }
+}
+
+//COMPRUEBA FORMA DE PAGO EN CANARIAS
+function comprobar(){
+  lista =document.Pedido.Provincia;  
+  laProv=lista.options[lista.selectedIndex].value;
+  if (laProv.substring(0,1)=="2"){
+       canarias=0; 
+     }else{
+       canarias=1;    
+     };
+  if (document.Pedido.FormaPago[0].checked && canarias==0){
+      alert("La Forma de Pago para esta Provincia debe ser Tarjeta o Transferencia Bancaria");
+      document.Pedido.FormaPago[1].checked=true;
+  }
+}
+
+//ABRE UNA VENTANA NUEVA DEL NAVEGADOR
+function AbreVentana(pagina, nombre, ancho, alto, barra_scroll,resiz) {
+	var winl = (screen.width - ancho) / 2;
+	var wint = (screen.height - alto) / 2;
+	winprops = 'height='+alto+',width='+ancho+',top='+wint+',left='+winl+',scrollbars='+barra_scroll+',resizable='+resiz;
+	win = window.open(pagina, nombre, winprops);
+	if (parseInt(navigator.appVersion) >= 4) win.focus();
+}
+
+//FORMATEA UN DATO NUMERICO PARA PONER LOS PUNTOS DE LOS MILES
+function PonPuntos(numero) {
+ if (numero == NaN) numero = "0";
+ numero = ""+numero; 
+ if (numero.length > 3) {
+   mod = numero.length % 3;
+   resultado = (mod > 0 ? (numero.substring(0,mod)) : "");
+   for (i=0 ; i < Math.floor(numero.length / 3); i++) {
+    if ((mod == 0) && (i == 0))
+      resultado += numero.substring(mod+ 3 * i, mod + 3 * i + 3);
+    else
+      resultado+= "." + numero.substring(mod + 3 * i, mod + 3 * i + 3);
+   }
+   return (resultado);
+ }
+ else return numero;
+}
+
+//FORMATEA UN DATO NUMERICO PARA PONERLO EN EUROS
+function PonEuros(numeuro) {
+//Redondeo a dos decimales el valor en Euros
+   euros_red=""+(Math.round(numeuro*100)/100);
+//Cambio el punto decimal por una coma
+   punto = euros_red.indexOf(".");
+   if (punto >= 0){ 
+     aux = euros_red.substring(0,punto);
+     aux=PonPuntos(aux)+",";
+     decimales = ""+euros_red.substring(punto+1,euros_red.length);
+     if (decimales.length == 1)
+        decimales+= "0";
+     aux += decimales;
+   }else{
+     aux=PonPuntos(euros_red)+",00";
+   }
+   return (aux);
+}
+
+function abreCorreo(usuario, dominio, asunto, cuerpo){
+	var m = 'm';
+	var a = 'a';
+	var i = 'i';
+	var l = 'l';
+	var t = 't';
+	var o = 'o';
+	var dp = ':';
+	var ar = '@';
+	var amper = '?';
+	var asrv = ar + dominio
+	var elMensaje = m + a + i + l + t + o + dp + usuario + asrv;
+	if (asunto != ''){
+		elMensaje += '?Subject='+asunto;
+		amper = '&';
+	}
+	if (cuerpo != '')
+		elMensaje += amper + 'Body='+cuerpo;
+	document.location.href=elMensaje;
+}
+
+//////////////////////////////////////////////////

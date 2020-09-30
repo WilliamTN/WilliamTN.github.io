@@ -1,0 +1,560 @@
+@charset "utf-8";
+body, html{
+	height:100%;
+}
+body{
+	margin:0;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	line-height: 18px;
+	background-image: url(../images/fondo_pagina_cype.jpg);
+	background-repeat: no-repeat;
+	color: #333;
+}
+a{
+	color: #004CB4;
+	text-decoration:none;
+}
+a:hover{
+	text-decoration: underline;
+	color: #CC0000;
+}
+#contenedor {
+	width: 880px;
+	background-color:#FFF;
+	margin:0 auto 0 auto;
+	overflow:auto;
+}
+#cabecera{
+	height:50px;
+	overflow:hidden;
+	margin:0;
+	padding:0;
+	background-image:url(../images/fondo_cabecera_cype_2011.jpg);
+	background-position:left;
+	background-repeat:no-repeat;
+}
+#cabecera_marca{
+	margin:0;
+	padding:0;
+	text-align:right;
+	float:right;
+}
+#cabecera_marca a{
+	color:#999999;
+	text-decoration:none;
+}
+#cabecera_marca a:hover{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+#eslogan_cype{
+	margin:9px 0 0 0;
+	padding:0;
+	text-align:right;
+	float:right;
+	line-height:15px;
+}
+#eslogan_cype a{
+	font-size:12px;
+	color:#999999;
+	text-decoration:none;
+}
+#eslogan_cype a:hover{
+	color:#999999;
+	text-decoration:underline;
+}
+#cabecera_seccion{
+	margin:0;
+	color:#CCC;
+	font-family: Geneva, Arial, Helvetica, sans-serif; 
+	font-size: 16px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	word-spacing: 2px;
+	padding-top:18px;  
+	text-transform:uppercase;
+}
+#cabecera_seccion a{
+	color: #CCC;
+	text-decoration:none;
+}
+#cabecera_seccion a:hover{
+	color: #FFF;
+	text-decoration:underline;
+}
+#secciones{
+	clear:both;
+	height:30px;
+	border-bottom:solid 1px #CCC;
+	padding:0 0 6px 0;
+	color:#CCCCCC;
+}
+#secciones ul, #subsecciones ul, #ruta ul{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+#secciones ul li{
+	padding-top:10px;
+	float:left;
+}
+#secciones ul li span{ 
+	margin: 0 6px 0 6px;
+}
+#secciones a, #subsecciones a{
+	color:#363636;
+	text-decoration:none;
+}
+#secciones a:hover, #subsecciones a:hover{
+	color:#363636;
+	text-decoration:underline;
+}
+#subsecciones{
+	clear:both;
+	height:15px;
+	padding:6px 0 6px 0;
+	color:#CCCCCC;
+	font-size:13px;
+}
+#subsecciones ul li{
+	float:left;
+	white-space:nowrap;
+}
+#subsecciones ul li span{
+	margin: 0 6px 0 6px;
+}
+#sub_secciones{
+	border-bottom:none;
+	padding-top:5px;
+}
+#link_contacte a{
+	color:#3670BE; 
+}
+#link_contacte a:hover{
+	color: #003470;
+	text-decoration:underline;
+}
+#link_contacte img{
+	margin-right:6px;
+}
+#cype_seccion a{
+	font-weight:bold;
+	color:#3670BE;
+}
+#ruta{
+	clear:both;
+	height:20px;
+	padding-top:2px;
+	color:#000000;
+	font-size: 11px;
+	color:#84AFD1;
+	z-index:3;
+}
+#ruta ul li{
+	padding-left:1px;
+	float:left;
+}
+#ruta a{
+	color:#84AFD1;
+	text-decoration:none;
+}
+#ruta a:hover{
+	color:#84AFD1;
+	text-decoration:underline;
+}
+.pagina_actual{
+	color:#000000;
+	font-weight:bold;
+}
+#contenido{
+	clear:both;
+	padding-bottom: 25px;
+}
+#contenido ul{
+	line-height:20px;
+	padding-bottom:4px;
+	margin-top:3px;
+	margin-bottom:3px;
+}
+#contenido li{
+	margin:3px 0;
+}
+#contenido ul li{
+	list-style-image:url(../images/topo_negro_nivel_01.gif);
+}
+#contenido ul ul li{
+	list-style-image:url(../images/topo_negro_nivel_02.gif);
+	font-weight: normal; 
+}
+#contenido ul ul ul li{
+	list-style-image:url(../images/topo_negro_nivel_03.gif);
+	font-style:italic;
+}
+#contenido ul ul ul ul li{
+	list-style-image:url(../images/topo_negro_nivel_04.gif);
+	font-weight: normal;
+	font-style:normal;
+}
+#columna_izquierda{
+	float:left;
+	width:120px;
+	margin:0 20px 20px 0;
+}
+#columna_izquierda p{
+	margin-top:0;
+}
+#titular{
+	float:left;
+	width:730px;
+	margin-bottom:10px;
+}
+/*
+#titular_texto{
+	float:left;
+}
+*/
+#titular_texto h1{
+	margin:0;
+	color:#3670BE;
+	font-size:24px;
+	line-height: 24px;
+	font-weight:bold;
+	margin-top: 10px;
+}
+.titular_texto{
+/*	float:left;  */
+	border-top: #CCCCCC dotted 1px;
+	padding-top: 15px;
+
+} 
+.titular_texto a{
+	margin:0;
+	color:#3670BE;
+	font-size:24px;
+	line-height: 24px;
+	font-weight:bold;
+}
+.titular_texto a:hover{
+	color: #363636;
+	text-decoration:underline;
+}
+.eslogan_titular_texto{
+	color:#3670BE; 
+	font-size:15px;
+	line-height: 15px;
+	font-style:italic;
+	font-weight:normal;
+}
+#titular_iconos{
+	display:block;
+	float:right;
+}
+#titular_iconos img{
+	padding-right:3px;
+}
+
+/* -------------------------- TITULARES ------------------------*/
+ 
+.titulo_nivel_1{
+	margin:0;
+	color:#3670BE;
+	font-size:24px;
+	line-height: 24px;
+	font-weight:bold;
+	border-top: #CCCCCC dotted 1px;
+	padding-top: 22px;
+}
+.titulo_nivel_1 a{
+	color:#3670BE;
+}
+.titulo_nivel_1 a:hover{	
+		color: #CC0000;	
+}
+.titulo_nivel_2{
+	margin:0;
+	color:#3670BE;
+	font-size:20px;
+	line-height: 20px;
+	font-weight:normal;
+	padding-top: 18px;
+}
+.titulo_nivel_2 a{
+	color:#3670BE;
+}
+.titulo_nivel_2 a:hover{	
+		color: #CC0000;	
+}
+.titulo_nivel_3{
+	margin:0;
+	color:#3670BE;
+	font-size:16px;
+	line-height: 16px;
+	font-weight:normal;
+	font-style:italic;
+	padding-top: 15px;
+}
+.titulo_nivel_3 a{
+	color:#3670BE;
+}
+.titulo_nivel_3 a:hover{	
+		color: #CC0000;
+}
+.titulo_nivel_4{
+	margin:0;
+	color:#3670BE;
+	font-size:14px;
+	line-height: 14px;
+	font-weight: bold;
+	padding-top: 15px;
+}
+.titulo_nivel_4 a{
+	color:#3670BE;
+}
+.titulo_nivel_4 a:hover{	
+		color: #CC0000;
+}
+.titulo_nivel_5{
+	margin:0;
+	color:#3670BE;
+	font-size:14px;
+	line-height: 14px;
+	font-style:italic;
+	font-weight: normal;
+	padding-top: 15px;
+}
+.titulo_nivel_5 a{
+	color:#3670BE;
+}
+.titulo_nivel_5 a:hover{	
+		color: #CC0000;
+}
+/* ----------------------FIN TITULARES ------------------------*/
+
+#resto_contenido{
+	float:left;
+}
+#indice {
+	border-top:#CCCCCC dotted 1px;
+	padding: 22px 0 15px 0;
+	display:block;
+	width:724px;
+	float:left;
+}
+#indice ul{
+	color: #3670BE;
+	line-height:20px;
+	padding-left:24px;	
+}
+#indice li a{
+	color: #3670BE;
+	text-decoration: none;
+}
+#indice ul li{
+	font-weight:bold;
+	list-style-image:url(../images/topo_azul_nivel_01.gif);
+}
+#indice ul ul li{
+	list-style-image:url(../images/topo_azul_nivel_02.gif);
+	font-weight: normal; 
+}
+#indice ul ul ul li{
+	list-style-image:url(../images/topo_azul_nivel_03.gif);
+	font-style:italic;
+	font-size:13px;
+}
+#indice ul ul ul ul li{
+	list-style-image:url(../images/topo_azul_nivel_04.gif);
+	font-weight: normal;
+	font-style:normal;
+	font-size:12px;
+}
+#indice ul, #indice p{
+	margin-top:3px;
+	margin-bottom:3px;
+}
+#indice li a:hover{
+	color: #363636;
+	text-decoration: underline;
+}
+#rotulo_indice{
+	color:#000000;
+	font-size: 16px;
+	font-weight:bold;
+	padding-bottom:3px;
+	margin-bottom:3px;
+}
+#pie{
+	width: 840px;
+	clear:both;
+	background-color:#f5f5f5;
+	margin:0 auto 0 auto;
+	padding:20px 20px;
+	color: #757575;
+	font-size:12px;
+  	border: solid #CCC 1px;
+}
+#pie a{
+	color:#757575;
+	text-decoration:none;
+}
+#pie a:hover{
+	color:#262626;
+	text-decoration:underline;
+}
+#secciones_mapa{
+	width: 840px;
+	margin:0 auto 0 auto;
+	padding:14px 20px 0 20px;
+	font-size:12px;
+	text-align:center;
+	z-index:4;
+}
+#mapa_linea1{
+	width:860px;
+}
+#mapa_linea2{
+	width:860px;
+}
+#secciones_mapa ul{
+	clear:both;
+	text-align:center;
+	display:block;
+	margin:0 auto;
+	padding:0;
+	margin-bottom:5px;
+	list-style:none;
+}
+#secciones_mapa li{
+	float:left;
+	margin-bottom:5px;
+/*	padding-left:2px;  */
+}
+#secciones_mapa li span{
+	margin: 0 8px 0 8px;
+	color:#999999;
+}
+#secciones_mapa a{
+	color:#828085;
+	text-decoration:none;
+}
+#secciones_mapa a:hover{
+	color:#828085;
+	text-decoration:underline;
+}
+#pie_logos{
+	width: 880px;
+	margin:0 auto 0 auto;
+/*	padding:7px 12px 0 12px; */
+	text-align:right;
+}
+.imagen_derecha{
+	border:0;
+	padding:0px 0 10px 20px;
+	float:right;
+	right:0;
+	margin:0;
+}
+.imagen_izquierda{
+	border:0;
+	padding:0px 20px 10px 0;
+	float:left;
+	margin:0;
+}
+.imagen_centro{
+	width:100%;
+	text-align:center;
+}
+.otros_programas ul{
+	margin-top:3px;
+	margin-bottom:3px;
+	list-style:disc;
+	font-weight:bold;
+}
+.otros_programas ul ul{
+	margin-top:8px;
+	margin-bottom:8px;
+	list-style:square;
+}
+.bloque_programa {
+	clear:both;
+	padding-left: 5px;
+}
+.bloque_programa img{
+	margin-right:15px;
+}
+.sin_espacio_superior{
+	padding-top:0;
+	margin-top:0;
+}
+.sin_espacio_inferior{
+	padding-bottom:0;
+	margin-bottom:0;
+}
+.limpia_float{
+	clear:both;
+}
+.texto_normal{
+	font-weight:normal;
+}
+#prog_relacionados ul{
+	color: #3670BE;
+	line-height:20px;
+	padding-left:24px;
+}
+#prog_relacionados li a{
+	color: #3670BE;
+	text-decoration: none;
+}
+#prog_relacionados ul li{
+	list-style-image:url(../images/topo_azul_nivel_01.gif);
+	font-weight:bold; 
+}
+#prog_relacionados ul ul li{
+	list-style-image:url(../images/topo_azul_nivel_02.gif);
+	font-weight: normal; 
+}
+#prog_relacionados ul ul ul li{
+	list-style-image:url(../images/topo_azul_nivel_03.gif);
+	font-style:italic;
+	font-size:13px;
+}
+#prog_relacionados ul ul ul ul li{
+	list-style-image:url(../images/topo_azul_nivel_04.gif);
+	font-weight: normal;
+	font-style:normal;
+	font-size:12px;
+}
+#prog_relacionados ul, #indice p{
+	margin-top:3px;
+	margin-bottom:3px;
+
+}
+#prog_relacionados li a:hover{
+	color: #363636;
+	text-decoration: underline;
+}
+.tabla_std{
+	border:solid 2px #FFF;
+	border-collapse:collapse;
+	width:100%;
+}
+.tabla_std td{
+	background-color:#FFF;
+	padding:10px;
+	border:solid 2px #F5F5F5;
+}
+.tabla_std tr > td:first-child {
+	background-color:#F5F5F5;
+	padding:10px;
+	border:solid 2px #FFF;
+}
+.tabla_std th{
+	background-color:#457194;
+	padding:10px;
+	border:solid 2px #FFF;
+}
+.tabla_std th a{
+	color:#FFF;
+	font-size:18px;
+}
